@@ -39,7 +39,7 @@ def movieModel():
     model = keras.models.Model([user_input,movie_input],sim)
     model.compile(optimizer=Adam(learning_rate=1e-3),loss='mse')
     History = model.fit([train.userId,train.movieId],train.rating, batch_size=64,
-                              epochs =20, validation_data = ([valid.userId,valid.movieId],valid.rating),
+                              epochs =10, validation_data = ([valid.userId,valid.movieId],valid.rating),
                               verbose = 1)
     user_id = df.userId.sample(1).iloc[0]
   # user_id = 4452

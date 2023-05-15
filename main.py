@@ -46,7 +46,7 @@ async def create_recommendation(movies:list[Movie]):
               movie_dict = DictWriter(f_objects,fieldnames=movie_field)
               movie_dict.writerow({"movieId":i.movieId,"title":i.title,"genres":i.genres})
               f_objects.close()
-      response =  await movieModel()
+      response =   movieModel()
       return response
 
 
