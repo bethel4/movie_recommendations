@@ -15,7 +15,6 @@ import random as rn
 
 def movieModel():
     df = pd.read_csv("ratings.csv")
-    # movie_df = pd.read_csv("movies.csv")
     df['rating'] = df['rating'].fillna(0)
     users = df.userId.unique()
     movies = df.movieId.unique()
@@ -24,8 +23,6 @@ def movieModel():
     num_users = len(userid2idx)
     num_movies = len(movieid2idx)
     n_latent_factors=64
-    df['userId'] = df['userId'].apply(lambda x: userid2idx[x])
-    df['movieId'] = df['movieId'].apply(lambda x: movieid2idx[x])
     split = np.random.rand(len(df)) < 0.9
     train = df[split]
     valid = df[~split]
