@@ -55,7 +55,7 @@ def movieRcommendation(model):
      
      ratings = model.predict([user_id,movies_not_watched]).flatten()
      print(ratings)
-     top_ratings_indices = ratings.argsort()[-10:]
+     top_ratings_indices = ratings.argsort()
      recommended_movie_ids = [
      movieid2idx.get(movies_not_watched[x][0]) for x in top_ratings_indices
   ]
